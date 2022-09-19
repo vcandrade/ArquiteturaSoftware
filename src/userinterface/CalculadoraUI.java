@@ -16,6 +16,12 @@ public class CalculadoraUI {
 			// interação com o usuário
 			// solicitação dos valores x e y
 
+			System.out.print("Informe o valor de x: ");
+			int x = input.nextInt();
+			
+			System.out.print("Informe o valor de y: ");
+			int y = input.nextInt();
+
 			System.out.println("1 - Somar");
 			System.out.println("2 - Subtrair");
 			System.out.println("3 - Multiplicar");
@@ -25,40 +31,36 @@ public class CalculadoraUI {
 			System.out.print("Opção: ");
 			int opcao = input.nextInt();
 
-			System.out.print("Informe o valor de x: ");
-			int x = input.nextInt();
-
-			System.out.print("Informe o valor de y: ");
-			int y = input.nextInt();
-
 			switch (opcao) {
-			case 1: {
-
-				resultado = this.calcService.somar(x, y);
-				break;
-			}
-			case 2: {
-
-				resultado = this.calcService.subtrair(x, y);
-				break;
-			}
-			case 3: {
-
-				resultado = this.calcService.multiplicar(x, y);
-				break;
-			}
-			case 4: {
-
-				resultado = this.calcService.dividir(x, y);
-				break;
-			}
-			case 5: {
-
-				resultado = this.calcService.calcularPotencia(x, y);
-				break;
-			}
-			default:
-				System.out.println("opção inválida");
+				case 1: {
+	
+					resultado = this.calcService.somar(x, y);
+					break;
+				}
+				case 2: {
+	
+					resultado = this.calcService.subtrair(x, y);
+					break;
+				}
+				case 3: {
+	
+					resultado = this.calcService.multiplicar(x, y);
+					break;
+				}
+				case 4: {
+	
+					resultado = this.calcService.dividir(x, y);
+					break;
+				}
+				case 5: {
+	
+					resultado = this.calcService.calcularPotencia(x, y);
+					break;
+				}
+				default: {
+	
+					throw new Exception("Opção Inválida");
+				}
 			}
 
 			// interação com o usuário
@@ -68,6 +70,10 @@ public class CalculadoraUI {
 		} catch (ArithmeticException ae) {
 
 			System.out.println("Impossível dividir por 0");
+		
+		} catch(Exception e) {
+			
+			System.out.println(e.getMessage());
 		}
 	}
 
