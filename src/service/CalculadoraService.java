@@ -21,6 +21,10 @@ public class CalculadoraService {
 	
 	public int dividir(int x, int y) throws ArithmeticException {
 
+		if(y == 0) {
+			
+			throw new ArithmeticException("Impossível dividir por 0");
+		}
 		return x / y;
 	}
 	

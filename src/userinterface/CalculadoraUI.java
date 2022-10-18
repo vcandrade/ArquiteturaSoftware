@@ -69,7 +69,7 @@ public class CalculadoraUI {
 
 		} catch (ArithmeticException ae) {
 
-			System.out.println("Impossível dividir por 0");
+			System.out.println(ae.getMessage());
 		
 		} catch(Exception e) {
 			
